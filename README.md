@@ -11,6 +11,8 @@ helped with fixing Phaser(in Daboss’s repo)
 - [**UltraThyme42**](https://github.com/UltraThyme42)
   
 UltraThyme42 helped with restoration of the game versions
+- [**Toonigy**](https://github.com/Toonigy)
+
 ## Other
 - [**entraptadoeztech**](https://github.com/entraptadoeztech)
   
