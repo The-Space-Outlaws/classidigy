@@ -15,8 +15,9 @@ UltraThyme42 helped with restoration of the game versions
 
 ## Other
 - [**entraptadoeztech**](https://github.com/entraptadoeztech)
-  
-She helped with hosting assets from Prodigy(work in progress‼️)
+- [**meowgoober**](https://github.com/meowgoober)
+
+Helped with ripping assets(mostly meowgoober)
 
 - Other contributors that helped Daboss(and us)
   
