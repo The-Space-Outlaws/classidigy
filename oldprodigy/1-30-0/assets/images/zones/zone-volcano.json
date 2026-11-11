@@ -1,0 +1,21 @@
+{"frames": {
+
+"bg":
+{
+	"frame": {"x":2,"y":2,"w":1280,"h":720},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1280,"h":720},
+	"sourceSize": {"w":1280,"h":720},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "zone-volcano.png",
+	"format": "RGBA8888",
+	"size": {"w":1284,"h":724},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:04ce3c5a5efa9d26c9ed0747dddc6f1e:2993d46a13866b419ceb34f0715d86e3:b3229a1b3f34b17f814ba3cf42e7b12e$"
+}
+}

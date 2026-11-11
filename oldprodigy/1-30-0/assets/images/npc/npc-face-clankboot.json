@@ -1,0 +1,39 @@
+{"frames": {
+
+"face_0":
+{
+	"frame": {"x":2,"y":2,"w":192,"h":198},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":198},
+	"sourceSize": {"w":192,"h":198},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_1":
+{
+	"frame": {"x":196,"y":2,"w":192,"h":198},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":198},
+	"sourceSize": {"w":192,"h":198},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_2":
+{
+	"frame": {"x":390,"y":2,"w":192,"h":198},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":198},
+	"sourceSize": {"w":192,"h":198},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-face-clankboot.png",
+	"format": "RGBA8888",
+	"size": {"w":584,"h":202},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:c320153772c53027c209f6ff72e558f9:7a1bad6bed9240acec2559f327594ef6:5865ff1aeb641cfcfabf7c5c752b0635$"
+}
+}

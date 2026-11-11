@@ -1,0 +1,102 @@
+{"frames": {
+
+"berry":
+{
+	"frame": {"x":401,"y":439,"w":47,"h":54},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":54},
+	"sourceSize": {"w":47,"h":54},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"burger-bottom":
+{
+	"frame": {"x":245,"y":2,"w":198,"h":114},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":114},
+	"sourceSize": {"w":198,"h":114},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"burger-lid":
+{
+	"frame": {"x":244,"y":322,"w":179,"h":115},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":179,"h":115},
+	"sourceSize": {"w":179,"h":115},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"dish":
+{
+	"frame": {"x":2,"y":2,"w":241,"h":59},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":241,"h":59},
+	"sourceSize": {"w":241,"h":59},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"expression-1":
+{
+	"frame": {"x":2,"y":444,"w":131,"h":71},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":131,"h":71},
+	"sourceSize": {"w":131,"h":71},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"expression-2":
+{
+	"frame": {"x":135,"y":444,"w":131,"h":71},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":131,"h":71},
+	"sourceSize": {"w":131,"h":71},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"expression-3":
+{
+	"frame": {"x":268,"y":439,"w":131,"h":71},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":131,"h":71},
+	"sourceSize": {"w":131,"h":71},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"lava":
+{
+	"frame": {"x":244,"y":118,"w":225,"h":202},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":202},
+	"sourceSize": {"w":225,"h":202},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"pot-lid":
+{
+	"frame": {"x":2,"y":322,"w":240,"h":120},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":240,"h":120},
+	"sourceSize": {"w":240,"h":120},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"pot":
+{
+	"frame": {"x":2,"y":63,"w":240,"h":257},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":240,"h":257},
+	"sourceSize": {"w":240,"h":257},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "bonfire.png",
+	"format": "RGBA8888",
+	"size": {"w":471,"h":517},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3d5f3778751e27493bc78d3efcbb2148:6d13190fc8419d9edcd1e8da4a7f2f10:3a1e562474eb4da1c889464cfd48ee41$"
+}
+}

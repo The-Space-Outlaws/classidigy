@@ -1,0 +1,39 @@
+{"frames": {
+
+"female":
+{
+	"frame": {"x":2,"y":2,"w":436,"h":407},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":436,"h":407},
+	"sourceSize": {"w":436,"h":408},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"male":
+{
+	"frame": {"x":440,"y":2,"w":474,"h":440},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":474,"h":440},
+	"sourceSize": {"w":474,"h":440},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"pet":
+{
+	"frame": {"x":916,"y":2,"w":380,"h":363},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":380,"h":363},
+	"sourceSize": {"w":380,"h":364},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "store-cloud.png",
+	"format": "RGBA8888",
+	"size": {"w":1298,"h":444},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3f9b4fb6ab1e127693a8a957b6d01592:f0a365d57442aa57a75313ebf5489e73:90943f096f4933f2453a4c6a662c9aa9$"
+}
+}

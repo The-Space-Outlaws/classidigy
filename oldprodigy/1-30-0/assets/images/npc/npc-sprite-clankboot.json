@@ -1,0 +1,84 @@
+{"frames": {
+
+"npc_0":
+{
+	"frame": {"x":2,"y":2,"w":62,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":108},
+	"sourceSize": {"w":62,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"npc_1":
+{
+	"frame": {"x":2,"y":2,"w":62,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":108},
+	"sourceSize": {"w":62,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"npc_2":
+{
+	"frame": {"x":66,"y":2,"w":62,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":108},
+	"sourceSize": {"w":62,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"npc_3":
+{
+	"frame": {"x":130,"y":2,"w":62,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":108},
+	"sourceSize": {"w":62,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"npc_4":
+{
+	"frame": {"x":194,"y":2,"w":62,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":108},
+	"sourceSize": {"w":62,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"npc_5":
+{
+	"frame": {"x":258,"y":2,"w":62,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":108},
+	"sourceSize": {"w":62,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"npc_6":
+{
+	"frame": {"x":322,"y":2,"w":62,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":108},
+	"sourceSize": {"w":62,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"npc_7":
+{
+	"frame": {"x":386,"y":2,"w":62,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":108},
+	"sourceSize": {"w":62,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-sprite-clankboot.png",
+	"format": "RGBA8888",
+	"size": {"w":450,"h":112},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:dbd9be0db428c98a42a8f9bcc1c7c445:830a292efbb5fd00b20f1c5657eaa8d0:7731685174a639542e1e4547e4778800$"
+}
+}

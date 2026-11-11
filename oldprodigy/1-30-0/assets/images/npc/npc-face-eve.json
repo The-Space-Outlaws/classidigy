@@ -1,0 +1,57 @@
+{"frames": {
+
+"face_0":
+{
+	"frame": {"x":2,"y":2,"w":198,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":200},
+	"sourceSize": {"w":198,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_1":
+{
+	"frame": {"x":202,"y":2,"w":198,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":200},
+	"sourceSize": {"w":198,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_2":
+{
+	"frame": {"x":402,"y":2,"w":198,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":200},
+	"sourceSize": {"w":198,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_3":
+{
+	"frame": {"x":602,"y":2,"w":198,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":200},
+	"sourceSize": {"w":198,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_4":
+{
+	"frame": {"x":802,"y":2,"w":198,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":200},
+	"sourceSize": {"w":198,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-face-eve.png",
+	"format": "RGBA8888",
+	"size": {"w":1002,"h":204},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:7004d7b80f79e4ed7851a9e198583487:916b8396a67c1dd727b8b4e0916005b9:3ba417bbb5c113288261073b72c62857$"
+}
+}

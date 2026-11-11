@@ -1,0 +1,30 @@
+{"frames": {
+
+"bg":
+{
+	"frame": {"x":2,"y":2,"w":1280,"h":720},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1280,"h":720},
+	"sourceSize": {"w":1280,"h":720},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"m1":
+{
+	"frame": {"x":1284,"y":2,"w":122,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
+	"sourceSize": {"w":122,"h":122},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "zone-tech.png",
+	"format": "RGBA8888",
+	"size": {"w":1408,"h":724},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:f6d44fdb92d238d101cf966259ba6588:c752a6fa4dff3a6ebd93cf392791c0fe:a0f14c2a0c2bc2054532dcab074d5f3d$"
+}
+}

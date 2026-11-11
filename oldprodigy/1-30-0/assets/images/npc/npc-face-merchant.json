@@ -1,0 +1,30 @@
+{"frames": {
+
+"face_0":
+{
+	"frame": {"x":2,"y":2,"w":200,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
+	"sourceSize": {"w":200,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_1":
+{
+	"frame": {"x":204,"y":2,"w":200,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
+	"sourceSize": {"w":200,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-face-merchant.png",
+	"format": "RGBA8888",
+	"size": {"w":406,"h":204},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:de3029549faa66c55f0443f2314f4f11:70af9611bc0973ac3c24a872e3e0134d:f0585ae60fb081d01999ac9f715a397c$"
+}
+}

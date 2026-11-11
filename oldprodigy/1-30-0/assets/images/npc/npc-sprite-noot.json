@@ -1,0 +1,21 @@
+{"frames": {
+
+"npc_0":
+{
+	"frame": {"x":2,"y":2,"w":52,"h":66},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":52,"h":66},
+	"sourceSize": {"w":52,"h":66},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-sprite-noot.png",
+	"format": "RGBA8888",
+	"size": {"w":56,"h":70},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:4ae5abf52fe5613f056936e3f6538ffb:3fe4ad1fa4cad63e39b0f51c1fa1a458:b35a5c3f16857a55fbd99720116d0bf4$"
+}
+}

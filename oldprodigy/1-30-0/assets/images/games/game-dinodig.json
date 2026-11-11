@@ -1,0 +1,57 @@
+{"frames": {
+
+"bg":
+{
+	"frame": {"x":2,"y":2,"w":1280,"h":720},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1280,"h":720},
+	"sourceSize": {"w":1280,"h":720},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"hole1":
+{
+	"frame": {"x":1284,"y":160,"w":20,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+	"sourceSize": {"w":20,"h":20},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"hole2":
+{
+	"frame": {"x":1306,"y":160,"w":20,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+	"sourceSize": {"w":20,"h":20},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"hole3":
+{
+	"frame": {"x":1328,"y":160,"w":20,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":20},
+	"sourceSize": {"w":20,"h":20},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"platform":
+{
+	"frame": {"x":1284,"y":2,"w":252,"h":156},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":252,"h":156},
+	"sourceSize": {"w":252,"h":156},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "game-dinodig.png",
+	"format": "RGBA8888",
+	"size": {"w":1538,"h":724},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:ad96a5d841dbc3b3f19a070d1a6c213f:73ea4fd97a0adbea3229574d0c18951f:b80490f8097980ea6ad53bffee25f2ac$"
+}
+}
