@@ -1,0 +1,48 @@
+{"frames": {
+
+"face_0":
+{
+	"frame": {"x":2,"y":2,"w":228,"h":172},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":228,"h":172},
+	"sourceSize": {"w":228,"h":172},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_1":
+{
+	"frame": {"x":232,"y":2,"w":228,"h":172},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":228,"h":172},
+	"sourceSize": {"w":228,"h":172},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_2":
+{
+	"frame": {"x":462,"y":2,"w":228,"h":172},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":228,"h":172},
+	"sourceSize": {"w":228,"h":172},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_3":
+{
+	"frame": {"x":692,"y":2,"w":228,"h":172},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":228,"h":172},
+	"sourceSize": {"w":228,"h":172},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-face-morris.png",
+	"format": "RGBA8888",
+	"size": {"w":922,"h":176},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:30c088b932a70fb623be95740f53a468:6e4a97cee84797cb8bddc793f1afcffd:ec9f294625db701abd3d473cd881ca2b$"
+}
+}

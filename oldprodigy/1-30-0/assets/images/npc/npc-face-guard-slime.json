@@ -1,0 +1,57 @@
+{"frames": {
+
+"face_0":
+{
+	"frame": {"x":604,"y":2,"w":198,"h":173},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":173},
+	"sourceSize": {"w":198,"h":173},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_1":
+{
+	"frame": {"x":402,"y":2,"w":200,"h":173},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":173},
+	"sourceSize": {"w":200,"h":173},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_2":
+{
+	"frame": {"x":2,"y":2,"w":198,"h":174},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":174},
+	"sourceSize": {"w":198,"h":174},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_3":
+{
+	"frame": {"x":804,"y":2,"w":200,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":171},
+	"sourceSize": {"w":200,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_4":
+{
+	"frame": {"x":202,"y":2,"w":198,"h":174},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":174},
+	"sourceSize": {"w":198,"h":174},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-face-guard-slime.png",
+	"format": "RGBA8888",
+	"size": {"w":1006,"h":178},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b258f1a0f807e88cd03661a4f6cc98cc:99fac237f30de24d1785830c6c1a91e2:9bc37f44baef35219724ade03cabad32$"
+}
+}

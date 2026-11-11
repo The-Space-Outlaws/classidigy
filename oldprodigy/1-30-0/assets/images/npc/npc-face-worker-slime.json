@@ -1,0 +1,57 @@
+{"frames": {
+
+"face_0":
+{
+	"frame": {"x":584,"y":2,"w":166,"h":165},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":165},
+	"sourceSize": {"w":166,"h":165},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_1":
+{
+	"frame": {"x":390,"y":2,"w":192,"h":173},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":173},
+	"sourceSize": {"w":192,"h":173},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_2":
+{
+	"frame": {"x":752,"y":2,"w":176,"h":163},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":176,"h":163},
+	"sourceSize": {"w":176,"h":163},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_3":
+{
+	"frame": {"x":196,"y":2,"w":192,"h":174},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":174},
+	"sourceSize": {"w":192,"h":174},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_4":
+{
+	"frame": {"x":2,"y":2,"w":192,"h":177},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":177},
+	"sourceSize": {"w":192,"h":177},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-face-worker-slime.png",
+	"format": "RGBA8888",
+	"size": {"w":930,"h":181},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e0ad2a88013a5eb2f75cc1085a5f9a2c:322cedff04f5c504b02cc6076fe4c265:2d3effae986b448cd7f70ab0a5cbaa9e$"
+}
+}

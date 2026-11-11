@@ -1,0 +1,111 @@
+{"frames": {
+
+"body":
+{
+	"frame": {"x":2,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"brows":
+{
+	"frame": {"x":142,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"eyes1":
+{
+	"frame": {"x":282,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"eyes2":
+{
+	"frame": {"x":422,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"eyes3":
+{
+	"frame": {"x":562,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"head":
+{
+	"frame": {"x":702,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"left_arm":
+{
+	"frame": {"x":842,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"legs":
+{
+	"frame": {"x":982,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"mouth":
+{
+	"frame": {"x":1122,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"right_arm":
+{
+	"frame": {"x":1262,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"snout":
+{
+	"frame": {"x":1402,"y":2,"w":138,"h":118},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":118},
+	"sourceSize": {"w":138,"h":118},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-sprite-morris.png",
+	"format": "RGBA8888",
+	"size": {"w":1542,"h":122},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d06e7b9653e7ff72384b7a4f3c9d9612:2c46f49be6fb92017d1bd9e97c11af7b:b3e77bc3819c6d1b893a7a9b74155a8c$"
+}
+}

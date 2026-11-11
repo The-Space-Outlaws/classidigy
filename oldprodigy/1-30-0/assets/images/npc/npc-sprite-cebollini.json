@@ -1,0 +1,138 @@
+{"frames": {
+
+"body":
+{
+	"frame": {"x":550,"y":2,"w":98,"h":88},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":98,"h":88},
+	"sourceSize": {"w":98,"h":88},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_1":
+{
+	"frame": {"x":650,"y":69,"w":69,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":69,"h":45},
+	"sourceSize": {"w":69,"h":45},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"face_2":
+{
+	"frame": {"x":721,"y":69,"w":69,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":69,"h":45},
+	"sourceSize": {"w":69,"h":45},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"hand_1":
+{
+	"frame": {"x":435,"y":95,"w":13,"h":14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":13,"h":14},
+	"sourceSize": {"w":13,"h":14},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"hand_2":
+{
+	"frame": {"x":416,"y":95,"w":17,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":17,"h":16},
+	"sourceSize": {"w":17,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"hat_0":
+{
+	"frame": {"x":2,"y":2,"w":136,"h":115},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":115},
+	"sourceSize": {"w":136,"h":115},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"hat_1":
+{
+	"frame": {"x":140,"y":2,"w":136,"h":115},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":115},
+	"sourceSize": {"w":136,"h":115},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"hat_2":
+{
+	"frame": {"x":278,"y":2,"w":136,"h":115},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":115},
+	"sourceSize": {"w":136,"h":115},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"mini":
+{
+	"frame": {"x":650,"y":2,"w":75,"h":65},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":65},
+	"sourceSize": {"w":75,"h":65},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"mini1":
+{
+	"frame": {"x":727,"y":2,"w":75,"h":65},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":65},
+	"sourceSize": {"w":75,"h":65},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"mini2":
+{
+	"frame": {"x":804,"y":2,"w":75,"h":65},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":65},
+	"sourceSize": {"w":75,"h":65},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"mini3":
+{
+	"frame": {"x":881,"y":2,"w":75,"h":65},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":65},
+	"sourceSize": {"w":75,"h":65},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"spatula_0":
+{
+	"frame": {"x":416,"y":2,"w":65,"h":91},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":65,"h":91},
+	"sourceSize": {"w":65,"h":91},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"spatula_1":
+{
+	"frame": {"x":483,"y":2,"w":65,"h":91},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":65,"h":91},
+	"sourceSize": {"w":65,"h":91},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "npc-sprite-cebollini.png",
+	"format": "RGBA8888",
+	"size": {"w":958,"h":119},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:16674c829b2a1d1e76913e6b1a769ffb:c43aa35fdf142416363b10eca76ebafb:efecf1987d8fb6eac0be82a7923ce1ce$"
+}
+}
