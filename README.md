@@ -7,7 +7,11 @@ Daboss originally inspired us to create this project
 
 - [**CookieDaDev**](https://github.com/CookieDaDev)
   
-He helped with fixing Phaser(in Daboss’s repo)
+helped with fixing Phaser(in Daboss’s repo)
+- [**UltraThyme42**](https://github.com/UltraThyme42)
+  
+UltraThyme42 helped with restoration of the game versions
+
 - Other contributors that helped Daboss(and us)
 
 your part was just as important <3
