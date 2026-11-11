@@ -11,9 +11,14 @@ helped with fixing Phaser(in Daboss’s repo)
 - [**UltraThyme42**](https://github.com/UltraThyme42)
   
 UltraThyme42 helped with restoration of the game versions
+## Other
+- [**entraptadoeztech**](https://github.com/entraptadoeztech)
+  
+She helped with hosting assets from Prodigy(work in progress‼️)
 
 - Other contributors that helped Daboss(and us)
-
+  
 your part was just as important <3
-### ❗️Mini Disclaimer❗️
+  
+## ❗️Mini Disclaimer❗️
 We do **not** own the assets but we are making fan versions of old prodigy!
