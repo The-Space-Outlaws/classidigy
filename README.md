@@ -1,10 +1,14 @@
 # Old Prodigy Revival Project
 You heard that right, we are trying to revive old prodigy!
 ## Contributors
-- [Daboss7173](https://github.com/Daboss7173)
+- [**Daboss7173**](https://github.com/Daboss7173)
 
 Daboss originally inspired us to create this project
-- Other contributors that helped Daboss
+
+- [**CookieDaDev**](https://github.com/CookieDaDev)
+  
+He helped with fixing Phaser(in Daboss’s repo)
+- Other contributors that helped Daboss(and us)
 
 your part was just as important <3
 ### ❗️Mini Disclaimer❗️
