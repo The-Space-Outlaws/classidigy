@@ -466,8 +466,9 @@ FirebaseCore._sigOf = function (obj, ignore) {
 	}
 };
 
-FirebaseCore.pushSave = function () {
-	if (!FirebaseCore.user || !FirebaseCore.init()) return;
+FirebaseCore.pushSave = function (done) {
+	done = typeof done === "function" ? done : function () {};
+	if (!FirebaseCore.user || !FirebaseCore.init()) { done(new Error("not-signed-in")); return; }
 	var game = FirebaseCore.getGame();
 	if (!game || !game.prodigy) return;
 	// Every branch below is isolated: a failed cloud write must never interrupt
@@ -480,14 +481,20 @@ FirebaseCore.pushSave = function () {
 		if (saveSig !== FirebaseCore._lastSaveSig) {
 			firebase.firestore().collection("saves").doc(FirebaseCore.user.uid).set(cleanSave).then(function () {
 				FirebaseCore._lastSaveSig = saveSig;
-				console.log("Cloud save pushed: " + (save.appearancedata && save.appearancedata.name))
+				console.log("Cloud save pushed: " + (save.appearancedata && save.appearancedata.name));
+				done(null);
 			}, function (e) {
 				FirebaseCore._lastSaveSig = null;
-				console.log("Cloud save push failed: " + e)
+				console.log("Cloud save push failed: " + e);
+				done(e);
 			});
+		} else {
+			done(null);
 		}
 	} catch (e) {
-		console.log("Cloud save build/push failed: " + e)
+		console.log("Cloud save build/push failed: " + e);
+		done(e);
+		return;
 	}
 	try {
 		var isMember = !!game.prodigy.player.isMember;

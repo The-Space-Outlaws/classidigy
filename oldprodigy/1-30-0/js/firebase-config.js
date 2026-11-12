@@ -24,15 +24,13 @@
 		} else {
 			window.PRODIGY_RELAY_URL = local;
 		}
-	} else if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-		window.PRODIGY_RELAY_URL = local;
 	} else {
+		// Production: use online relays, never the local relay.
 		// Online: prefer classidigy.xdijd.fyi; if it's not working, fall back to the Render relay.
 		var chosen = primary;
 		try {
 			var xhr = new XMLHttpRequest();
 			xhr.open("GET", primary + "status", false);
-			xhr.timeout = 4000;
 			xhr.send();
 			if (xhr.status < 200 || xhr.status >= 400) {
 				chosen = fallback;
