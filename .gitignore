@@ -8,3 +8,4 @@ server/node_modules/
 server/.env
 oldprodigy/1-30-0/.playwright-mcp/
 oldprodigy/1-30-0/agents.md
+/oldprodigy/1-30-0/server

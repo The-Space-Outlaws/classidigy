@@ -3,20 +3,47 @@
 // what restrict reads/writes to the owning user (players/{uid}, saves/{uid}).
 // Multiplayer relay (new in this fork). Deployed on Render, see render.yaml
 // in the repo root and server/README.md.
-//   Production: "https://old-prodigy-relay.onrender.com/"
+//   Primary: "https://classidigy.xdijd.fyi/"
+//   Fallback: "https://old-prodigy-relay.onrender.com/"
 //   Local dev (server/ running): "http://127.0.0.1:3100/"
 // For local development, swap in the local URL instead.
-// Smart relay resolution: if explicitly requested via ?relay=..., or on localhost, use local; otherwise use production Render relay.
-if (window.location.search.indexOf("relay=render") >= 0 || window.location.search.indexOf("relay=prod") >= 0) {
-	window.PRODIGY_RELAY_URL = "https://old-prodigy-relay.onrender.com/";
-} else if (window.location.search.indexOf("relay=") >= 0) {
-	var match = window.location.search.match(/[?&]relay=([^&]+)/);
-	window.PRODIGY_RELAY_URL = match ? decodeURIComponent(match[1]) : "http://127.0.0.1:3100/";
-} else if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-	window.PRODIGY_RELAY_URL = "http://127.0.0.1:3100/";
-} else {
-	window.PRODIGY_RELAY_URL = "https://old-prodigy-relay.onrender.com/";
-}
+// Smart relay resolution: try classidigy.xdijd.fyi first; if it's not working, fall back to the Render relay.
+(function () {
+	var primary = "https://classidigy.xdijd.fyi/";
+	var fallback = "https://old-prodigy-relay.onrender.com/";
+	var local = "http://127.0.0.1:3100/";
+
+	if (window.location.search.indexOf("relay=") >= 0) {
+		var match = window.location.search.match(/[?&]relay=([^&]+)/);
+		if (match && (match[1] === "render" || match[1] === "prod")) {
+			window.PRODIGY_RELAY_URL = fallback;
+		} else if (match && (match[1] === "classidigy" || match[1] === "primary")) {
+			window.PRODIGY_RELAY_URL = primary;
+		} else if (match) {
+			window.PRODIGY_RELAY_URL = decodeURIComponent(match[1]);
+		} else {
+			window.PRODIGY_RELAY_URL = local;
+		}
+	} else if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+		window.PRODIGY_RELAY_URL = local;
+	} else {
+		// Online: prefer classidigy.xdijd.fyi; if it's not working, fall back to the Render relay.
+		var chosen = primary;
+		try {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", primary + "status", false);
+			xhr.timeout = 4000;
+			xhr.send();
+			if (xhr.status < 200 || xhr.status >= 400) {
+				chosen = fallback;
+			}
+		} catch (e) {
+			chosen = fallback;
+		}
+		window.PRODIGY_RELAY_URL = chosen;
+		window.PRODIGY_RELAY_FALLBACK_URL = fallback;
+	}
+})();
 
 window.FIREBASE_CONFIG = {
 	apiKey: "AIzaSyCA3M-GSB9nVajwQpoSOga_aQHclwk_Ng8",
