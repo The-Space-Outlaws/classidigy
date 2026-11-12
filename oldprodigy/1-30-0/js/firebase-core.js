@@ -144,6 +144,9 @@ FirebaseCore.auth = function (isSignUp, emailOrUsername, password, rawUsername, 
 	var input = FirebaseCore.normalizeUsername(emailOrUsername);
 	var finish = function (user) {
 		FirebaseCore.user = user;
+		// A different account may legitimately have a different save; never let
+		// the previous account's write signatures suppress this one's first save.
+		FirebaseCore.resetCloudDedupe();
 		FirebaseCore.ensurePlayerDoc(user).then(function () {
 			done(null)
 		}, function () {
@@ -369,6 +372,7 @@ FirebaseCore.deleteAccount = function (password, done) {
 		return user.delete()
 	}).then(function () {
 		FirebaseCore.user = null;
+		FirebaseCore.resetCloudDedupe();
 		done(null)
 	}, function (err) {
 		console.log("Account deletion failed at some step: " + (err && err.code));
@@ -398,49 +402,138 @@ FirebaseCore.describeDeleteError = function (err) {
 	}
 };
 
+// Deep-copy arbitrary game data into a value Firestore accepts.
+//
+// Firestore rejects `undefined`. Sparse array holes are a trap: forEach() and
+// Object.keys() skip them (so a scan can look clean), but Firestore sees them
+// as undefined and throws inside set() — synchronously. Rebuild arrays index by
+// index, mapping holes/undefined to null, and drop undefined object keys.
+FirebaseCore.toFirestoreData = function (value, seen) {
+	if (value === null) return null;
+	var type = typeof value;
+	if (type === "undefined" || type === "function" || type === "symbol") return undefined;
+	if (type !== "object") return value;
+	if (Object.prototype.toString.call(value) === "[object Date]") return value;
+	seen = seen || [];
+	for (var s = 0; s < seen.length; s++) if (seen[s] === value) return undefined;
+	seen.push(value);
+	var out, i, k, v;
+	if (Array.isArray(value)) {
+		out = new Array(value.length);
+		for (i = 0; i < value.length; i++) {
+			v = FirebaseCore.toFirestoreData(value[i], seen);
+			out[i] = v === undefined ? null : v
+		}
+	} else {
+		out = {};
+		for (k in value) {
+			if (!Object.prototype.hasOwnProperty.call(value, k) || k === "__proto__") continue;
+			v = FirebaseCore.toFirestoreData(value[k], seen);
+			if (v !== undefined) out[k] = v
+		}
+	}
+	seen.pop();
+	return out;
+};
+
+// Signature of the last successfully written document. The autosave hook runs
+// every 60s, but the player's data rarely changes between runs; skipping
+// identical writes keeps Firestore usage inside the free tier and avoids
+// pointless writes mid-battle. Cleared on failure so the next run retries.
+FirebaseCore._lastSaveSig = null;
+FirebaseCore._lastPublicSig = null;
+FirebaseCore._lastMember = null;
+
+// Forget what we last wrote. Call on every user change (sign-in, sign-out,
+// account deletion) so one account's cache can never suppress another's writes.
+FirebaseCore.resetCloudDedupe = function () {
+	FirebaseCore._lastSaveSig = null;
+	FirebaseCore._lastPublicSig = null;
+	FirebaseCore._lastMember = null;
+};
+
+FirebaseCore._sigOf = function (obj, ignore) {
+	var sig = {};
+	for (var k in obj) {
+		if (!Object.prototype.hasOwnProperty.call(obj, k)) continue;
+		if (ignore && ignore.indexOf(k) !== -1) continue;
+		sig[k] = obj[k];
+	}
+	try {
+		return JSON.stringify(sig);
+	} catch (e) {
+		return null;
+	}
+};
+
 FirebaseCore.pushSave = function () {
 	if (!FirebaseCore.user || !FirebaseCore.init()) return;
 	var game = FirebaseCore.getGame();
 	if (!game || !game.prodigy) return;
-	var save;
+	// Every branch below is isolated: a failed cloud write must never interrupt
+	// gameplay (this runs from the save hook, sometimes mid-battle).
 	try {
-		save = LocalSave.buildSave()
+		var save = LocalSave.buildSave();
+		save.updatedAt = Date.now();
+		var cleanSave = FirebaseCore.toFirestoreData(save);
+		var saveSig = FirebaseCore._sigOf(cleanSave, ["savedAt", "updatedAt"]);
+		if (saveSig !== FirebaseCore._lastSaveSig) {
+			firebase.firestore().collection("saves").doc(FirebaseCore.user.uid).set(cleanSave).then(function () {
+				FirebaseCore._lastSaveSig = saveSig;
+				console.log("Cloud save pushed: " + (save.appearancedata && save.appearancedata.name))
+			}, function (e) {
+				FirebaseCore._lastSaveSig = null;
+				console.log("Cloud save push failed: " + e)
+			});
+		}
 	} catch (e) {
-		return console.log("Cloud save build failed: " + e)
+		console.log("Cloud save build/push failed: " + e)
 	}
-	save.updatedAt = Date.now();
-	firebase.firestore().collection("saves").doc(FirebaseCore.user.uid).set(save).then(function () {
-		console.log("Cloud save pushed: " + save.appearancedata.name)
-	}, function (e) {
-		console.log("Cloud save push failed: " + e)
-	});
-	firebase.firestore().collection("players").doc(FirebaseCore.user.uid).set({
-		isMember: !!game.prodigy.player.isMember,
-		updatedAt: Date.now()
-	}, {
-		merge: !0
-	}).catch(function (e) {
+	try {
+		var isMember = !!game.prodigy.player.isMember;
+		if (isMember !== FirebaseCore._lastMember) {
+			firebase.firestore().collection("players").doc(FirebaseCore.user.uid).set({
+				isMember: isMember,
+				updatedAt: Date.now()
+			}, {
+				merge: !0
+			}).then(function () {
+				FirebaseCore._lastMember = isMember;
+			}, function (e) {
+				FirebaseCore._lastMember = null;
+				console.log("membership mirror failed: " + e)
+			});
+		}
+	} catch (e) {
 		console.log("membership mirror failed: " + e)
-	});
+	}
 	// Public mirror: other players (and the relay's leaderboard) read this.
 	// Contains nothing secret — it's the same data the game sends to battle peers.
 	try {
 		var player = game.prodigy.player;
 		if (player && player.getLevel) {
-			firebase.firestore().collection("publicPlayers").doc(FirebaseCore.user.uid).set({
+			var pub = FirebaseCore.toFirestoreData({
 				appearance: player.appearance && player.appearance.data ? player.appearance.data : {},
 				equipment: player.equipment && player.equipment.data ? player.equipment.data : {},
 				data: player.data ? player.data : {},
+				pets: (player.kennel && player.kennel.data) ? player.kennel.data : [],
 				house: player.house && player.house.data ? player.house.data : {},
 				isMember: !!player.isMember,
 				level: player.getLevel(),
 				arenaScore: player.getArenaScore ? player.getArenaScore() : 0,
 				updatedAt: Date.now()
-			}, {
-				merge: !0
-			}).catch(function (e) {
-				console.log("publicPlayers mirror failed: " + (e && e.code))
 			});
+			var pubSig = FirebaseCore._sigOf(pub, ["updatedAt"]);
+			if (pubSig !== FirebaseCore._lastPublicSig) {
+				firebase.firestore().collection("publicPlayers").doc(FirebaseCore.user.uid).set(pub, {
+					merge: !0
+				}).then(function () {
+					FirebaseCore._lastPublicSig = pubSig;
+				}, function (e) {
+					FirebaseCore._lastPublicSig = null;
+					console.log("publicPlayers mirror failed: " + (e && e.code))
+				});
+			}
 		}
 	} catch (e) {
 		console.log("publicPlayers mirror failed: " + e)
@@ -452,7 +545,13 @@ FirebaseCore.installSaveHook = function () {
 	var original = LocalSave.saveToBrowser;
 	LocalSave.saveToBrowser = function () {
 		var ok = original.apply(this, arguments);
-		if (ok) FirebaseCore.pushSave();
+		if (ok) {
+			try {
+				FirebaseCore.pushSave();
+			} catch (e) {
+				console.log("Cloud save hook failed: " + e);
+			}
+		}
 		return ok
 	};
 	LocalSave.__firebaseWrapped = !0;
@@ -527,6 +626,42 @@ FirebaseCore.getPublicPlayer = function (uid, fields, cb) {
 	});
 };
 
+// Turn on the retail multiplayer code paths for a signed-in player.
+//
+// The revival logs in through Firebase and joins a world through the relay, so
+// the legacy `network.login()` never runs — and that call is the only place
+// that ever sets `network.loggedIn`. The retail client gates everything
+// multiplayer on it: zone switching (which drives presence), chat, player
+// movement updates and the PVP handshake all check canUseMP(), which requires
+// loggedIn. Without it the world is single-player even though the socket is
+// connected.
+//
+// The legacy progress endpoints behind network.updateCharacter() don't exist
+// on the relay (Firestore owns the save), so they are answered locally. That
+// keeps the 1s check-in loop quiet and prevents its "update failed → log the
+// player off" countdown from firing mid-game.
+FirebaseCore.enableOnlineMultiplayer = function (game) {
+	try {
+		var net = game && game.prodigy && game.prodigy.network;
+		if (!net || !net.api) return;
+		var api = net.api;
+		if (!api.__relayStubbed) {
+			var ok = function (callbacks) {
+				if (callbacks && typeof callbacks["200"] === "function") callbacks["200"]();
+				return !0
+			};
+			api.updateCharacter = ok;
+			api.updateUser = ok;
+			api.saveAnswer = ok;
+			api.updateUserAbility = ok;
+			api.__relayStubbed = !0;
+		}
+		net.loggedIn = !0;
+	} catch (e) {
+		console.log("enableOnlineMultiplayer failed: " + e);
+	}
+};
+
 // Replace the game's getCharData with the public-mirror read.
 FirebaseCore.patchCharData = function (game) {
 	var net = game && game.prodigy && game.prodigy.network;
@@ -585,6 +720,7 @@ FirebaseCore.afterOnlineLogin = function (game) {
 		game = game || FirebaseCore.getGame();
 		if (!game || !game.prodigy) return;
 		FirebaseCore.refreshNetworkCredentials(game);
+		FirebaseCore.enableOnlineMultiplayer(game);
 		FirebaseCore.patchCharData(game);
 		FirebaseCore.patchGameClasses();
 		var net = game.prodigy.network;
@@ -610,10 +746,11 @@ FirebaseCore.afterOnlineLogin = function (game) {
 // game should simply start.
 FirebaseCore.worldChosen = function (game, e, t, i) {
 	try {
-		if (i) {
+		if (i || (t && !e)) {
 			game.prodigy.open.charSelect();
 			return;
 		}
+		FirebaseCore.enableOnlineMultiplayer(game);
 		var zone = game.prodigy.player && game.prodigy.player.data && game.prodigy.player.data.zone;
 		if (zone && String(zone).indexOf("-") > 0) {
 			try {

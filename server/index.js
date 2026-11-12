@@ -262,6 +262,50 @@ app.get("/leaderboard-api/pvp/:min/:max", function (req, res) {
 	}
 });
 
+// The retail client also asks for a class leaderboard:
+//   GET /leaderboard-api/class/<classIDs>?sort=data.level&limit=30
+// It renders whatever comes back as a plain list of wizards (no places), and
+// treats an empty array as "there was an error loading the leaderboard". This
+// fork has no classes, so serve the top players by level from the same
+// publicPlayers cache — the list is real player data instead of an error, and
+// it costs no extra Firestore reads.
+app.get("/leaderboard-api/class/:classIDs", function (req, res) {
+	var sort = String(req.query.sort || "data.level");
+	var limit = Math.max(1, Math.min(30, Number(req.query.limit) || 30));
+
+	var serve = function () {
+		var rows = leaderboardCache.slice();
+		try {
+			rows.sort(function (a, b) {
+				var av = sort.split(".").reduce(function (o, k) {
+					return o && typeof o === "object" ? o[k] : undefined;
+				}, a);
+				var bv = sort.split(".").reduce(function (o, k) {
+					return o && typeof o === "object" ? o[k] : undefined;
+				}, b);
+				return (Number(bv) || 0) - (Number(av) || 0);
+			});
+		} catch (e) {
+			console.error("[relay] class leaderboard sort failed: " + e);
+		}
+		res.json(rows.slice(0, limit).map(function (e) {
+			return {
+				userID: e.userID,
+				appearance: e.appearance,
+				equipment: e.equipment,
+				data: e.data,
+				isMember: e.isMember
+			};
+		}));
+	};
+
+	if (Date.now() - leaderboardCacheAt > LEADERBOARD_TTL) {
+		refreshLeaderboard(serve);
+	} else {
+		serve();
+	}
+});
+
 // ---------- http + socket.io ------------------------------------------------
 var server = http.createServer(app);
 var io = require("socket.io")(server);
