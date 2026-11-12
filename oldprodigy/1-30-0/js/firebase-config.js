@@ -10,7 +10,7 @@
 // Smart relay resolution: try classidigy.xdijd.fyi first; if it's not working, fall back to the Render relay.
 (function () {
 	var primary = "https://classidigy.xdijd.fyi/";
-	var fallback = "https://old-prodigy-relay.onrender.com/";
+	var fallback = "https://old-prodigy-relay-izey.onrender.com/";
 	var local = "http://127.0.0.1:3100/";
 
 	if (window.location.search.indexOf("relay=") >= 0) {
