@@ -1,4 +1,10 @@
 
-oldprodigy/1-30-0/.playwright-mcp/console-2026-11-12T02-14-04-113Z.log
-oldprodigy/1-30-0/.playwright-mcp/page-2026-11-12T02-14-10-095Z.yml
+# OS / editor cruft
+.DS_Store
+*.log
+
+# relay: dependencies and local secrets — never commit
+server/node_modules/
+server/.env
+oldprodigy/1-30-0/.playwright-mcp/
 oldprodigy/1-30-0/agents.md
