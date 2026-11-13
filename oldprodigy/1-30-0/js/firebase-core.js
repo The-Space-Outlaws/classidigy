@@ -508,6 +508,7 @@ FirebaseCore.resetCloudDedupe = function () {
 			}
 			self.clearSearch();
 			try { self.input.setFocus(null); } catch (e) {}
+			self.game.prodigy.player.chatID = text;
 			self.game.prodigy.network.emitMessage({
 				action: "chat",
 				data: { userID: self.game.prodigy.player.userID, chatID: text }
